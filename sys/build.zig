@@ -10,6 +10,7 @@ pub fn build(b: *Builder) void {
     };
     const kernel = b.addExecutable("zkernel.elf", "kernel/init.zig");
     kernel.addAssemblyFile("arch/aarch64/start.S");
+    kernel.setBuildMode(.ReleaseSmall);
     kernel.setTarget(target);
     kernel.setLinkerScriptPath(.{ .path = "arch/aarch64/kernel.ld" });
     kernel.code_model = .small;
