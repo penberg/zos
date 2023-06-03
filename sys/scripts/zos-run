@@ -4,5 +4,4 @@ qemu-system-aarch64 \
   -machine virt \
   -cpu cortex-a57 \
   -nographic \
-  -kernel zig-out/bin/zkernel.elf \
-  -d in_asm,int,exec
+  -kernel zig-out/bin/zkernel.elf
