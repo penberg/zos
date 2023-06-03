@@ -9,6 +9,7 @@ pub fn build(b: *Builder) void {
         .abi = Target.Abi.none,
     };
     const kernel = b.addExecutable("zkernel.elf", "kernel/init.zig");
+    kernel.addPackagePath("uart", "arch/aarch64/uart.zig");
     kernel.addAssemblyFile("arch/aarch64/start.S");
     kernel.setBuildMode(.ReleaseSmall);
     kernel.setTarget(target);
